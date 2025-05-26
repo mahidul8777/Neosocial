@@ -157,3 +157,46 @@
   from { width: 0%; }
   to { width: 100%; }
 }
+/* --- Reels --- */
+.reels-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.reel {
+  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.reel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-actions {
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.reel-actions span {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.reel-actions span:hover {
+  transform: scale(1.2);
+}
