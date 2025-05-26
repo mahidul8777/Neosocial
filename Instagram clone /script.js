@@ -171,3 +171,20 @@ function getBotReply(msg) {
   if (msg.includes("explore")) return "Check the Explore page to find trending content!";
   return "Sorry, I'm still learning. Try again with a different query.";
 }
+// Theme Toggle
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+  const icon = document.getElementById("themeIcon");
+  const isLight = document.body.classList.contains("light-mode");
+  icon.textContent = isLight ? "☀️" : "🌙";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+}
+
+// On load: apply saved theme
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    document.getElementById("themeIcon").textContent = "☀️";
+  }
+});
