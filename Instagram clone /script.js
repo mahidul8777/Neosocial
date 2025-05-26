@@ -67,3 +67,37 @@ const observer = new IntersectionObserver((entries) => {
 reels.forEach((video) => {
   observer.observe(video);
 });
+// Sample users and posts for search
+const sampleData = [
+  { type: "user", name: "john_doe" },
+  { type: "user", name: "ai_artist" },
+  { type: "post", name: "sunset photo" },
+  { type: "user", name: "tech_explorer" },
+  { type: "post", name: "ai concept art" },
+  { type: "post", name: "futuristic design" }
+];
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    const filtered = sampleData.filter(item =>
+      item.name.toLowerCase().includes(query)
+    );
+
+    filtered.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "search-item";
+      div.innerHTML = `<b>${item.type.toUpperCase()}</b><br>${item.name}`;
+      searchResults.appendChild(div);
+    });
+
+    if (query && filtered.length === 0) {
+      searchResults.innerHTML = "<p style='color:#888;'>No results found.</p>";
+    }
+  });
+}
