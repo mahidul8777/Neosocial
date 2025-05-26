@@ -1,0 +1,122 @@
+/* --- Navbar --- */
+.navbar {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+.search {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  width: 40%;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.icons span {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.icons span:hover {
+  transform: scale(1.2);
+}
+
+/* --- Stories --- */
+.stories {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+.story {
+  min-width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  animation: float 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* --- Feed --- */
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.user-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #888;
+}
+
+.username {
+  color: white;
+  font-weight: bold;
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+}
+
+.post-actions {
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.caption {
+  padding: 0 10px 15px;
+  color: #ccc;
+  font-size: 14px;
+}
