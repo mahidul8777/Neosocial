@@ -135,3 +135,39 @@ if (searchInput) {
     }
   });
 }
+// Chatbot Toggle
+function toggleChatbot() {
+  const chatbotBox = document.getElementById("chatbotBox");
+  chatbotBox.style.display = chatbotBox.style.display === "flex" ? "none" : "flex";
+}
+
+// Send message & bot reply
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim();
+  if (!message) return;
+
+  const chatBox = document.getElementById("chatMessages");
+  const userMsg = document.createElement("div");
+  userMsg.className = "user";
+  userMsg.textContent = message;
+  chatBox.appendChild(userMsg);
+
+  input.value = "";
+
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot";
+    botMsg.textContent = getBotReply(message);
+    chatBox.appendChild(botMsg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 600);
+}
+
+function getBotReply(msg) {
+  msg = msg.toLowerCase();
+  if (msg.includes("hello") || msg.includes("hi")) return "Hey there! How can I assist you?";
+  if (msg.includes("profile")) return "Go to your profile page to view or edit your posts.";
+  if (msg.includes("explore")) return "Check the Explore page to find trending content!";
+  return "Sorry, I'm still learning. Try again with a different query.";
+}
