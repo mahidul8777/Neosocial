@@ -265,3 +265,46 @@
 .profile-posts img:hover {
   transform: scale(1.05);
 }
+/* --- Explore Page --- */
+.explore-header {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  background: linear-gradient(to right, #00bcd4, #673ab7);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.explore-grid {
+  column-count: 2;
+  column-gap: 10px;
+  padding: 10px;
+}
+
+.explore-grid img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  filter: brightness(90%) saturate(120%);
+}
+
+.explore-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  filter: brightness(110%);
+}
+
+@media (min-width: 768px) {
+  .explore-grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .explore-grid {
+    column-count: 4;
+  }
+}
