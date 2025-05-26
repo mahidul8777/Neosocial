@@ -51,3 +51,19 @@ storyViewer.addEventListener("click", nextStory);
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeStory();
 });
+// Reels: Play/pause on scroll
+const reels = document.querySelectorAll(".reel video");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.play();
+    } else {
+      entry.target.pause();
+    }
+  });
+}, { threshold: 0.8 });
+
+reels.forEach((video) => {
+  observer.observe(video);
+});
