@@ -20,4 +20,14 @@
   </div>
   <script src="script.js"></script>
 </body>
+  <div class="chatbot-icon" onclick="toggleChatbot()">🤖</div>
+
+<div class="chatbot-box" id="chatbotBox">
+  <div class="chat-header">AI Assistant <span onclick="toggleChatbot()">×</span></div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 </html>
