@@ -461,3 +461,18 @@ body {
   --text: #111;
   --card: #fff;
 }
+/* --- Global Enhancements --- */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00bcd4, #673ab7);
+  border-radius: 10px;
+}
