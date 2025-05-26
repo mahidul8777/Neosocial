@@ -308,3 +308,42 @@
     column-count: 4;
   }
 }
+/* --- Search --- */
+.search-bar {
+  padding: 20px;
+  background: black;
+  text-align: center;
+}
+
+.search-bar input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 400px;
+  font-size: 16px;
+  background: #222;
+  color: white;
+  outline: none;
+}
+
+.search-results {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.search-item {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.search-item:hover {
+  background: #222;
+  transform: scale(1.03);
+}
