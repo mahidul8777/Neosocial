@@ -1,0 +1,11 @@
+document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Login successful! Redirecting to home feed...");
+  // location.href = "home.html"; // এইটা পরে অ্যাড করবো
+});
+
+document.getElementById("signupForm")?.addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Account created successfully! Redirecting to login...");
+  location.href = "index.html";
+});
