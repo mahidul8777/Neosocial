@@ -120,3 +120,40 @@
   color: #ccc;
   font-size: 14px;
 }
+/* --- Story Viewer Overlay --- */
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.story-content img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.story-progress {
+  width: 0%;
+  height: 5px;
+  background: #00bcd4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: none;
+}
+
+@keyframes progressBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
